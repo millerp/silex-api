@@ -155,5 +155,4 @@ class Produto
         $this->estoque = $estoque;
     }
 
-
 }

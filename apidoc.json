@@ -1,0 +1,10 @@
+{
+  "name": "API de Consulta de produtos",
+  "description": "API que permita consultar e atualizar o estoque de produtos.",
+  "title": "Consulta de produtos",
+  "version": "0.1.0",
+  "order": [
+    "GetFabricante",
+    "PostFabricante"
+  ]
+}

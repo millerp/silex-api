@@ -1,6 +1,9 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Fabricante
@@ -18,6 +21,12 @@ class Fabricante
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
+    /**
+     * @var string
+     * @ORM\Column(name="nome", type="string", length=255, nullable=false)
+     */
+    private $nome;
 
     /**
      * @return string
@@ -50,13 +59,22 @@ class Fabricante
     {
         $this->id = $id;
     }
-
-    /**
-     * @var string
+    /*
      *
-     * @ORM\Column(name="nome", type="string", length=255, nullable=true)
+     * @return array
      */
-    private $nome;
-
-
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'nome' => $this->nome
+        ];
+    }
+    /*
+     * Validator
+     */
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('nome', new NotBlank(['message' => 'Campo {nome} é obrigatório']));
+    }
 }
