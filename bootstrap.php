@@ -29,3 +29,4 @@ $conn = array(
 );
 
 $em = EntityManager::create($conn, $config);
+$qb = $em->createQueryBuilder();

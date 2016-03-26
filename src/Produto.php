@@ -1,5 +1,8 @@
 <?php
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Produto
@@ -65,14 +68,6 @@ class Produto
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**
@@ -155,4 +150,26 @@ class Produto
         $this->estoque = $estoque;
     }
 
+    /*
+     * Validator
+     */
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('nome', new NotBlank(['message' => 'Campo {nome} é obrigatório']));
+        $metadata->addPropertyConstraint('garantia', new NotBlank(['message' => 'Campo {garantia} é obrigatório']));
+        $metadata->addPropertyConstraint('grade', new NotBlank(['message' => 'Campo {grade} é obrigatório']));
+        $metadata->addPropertyConstraint('fabricante', new NotBlank(['message' => 'Campo {fabricante} é obrigatório']));
+    }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->getId(),
+            'nome' => $this->getNome(),
+            'garantia' => $this->getGarantia(),
+            'grade' => $this->getGrade(),
+            'fabricante' => $this->getFabricante()->toArray(),
+            'estoque' => $this->getEstoque()->toArray(),
+        ];
+    }
 }

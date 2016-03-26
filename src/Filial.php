@@ -26,5 +26,39 @@ class Filial
      */
     private $nome;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * @param string $nome
+     * @return Filial
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+        return $this;
+    }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->getId(),
+            'nome' => $this->getNome()
+        ];
+    }
+
 
 }

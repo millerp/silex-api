@@ -55,14 +55,6 @@ class Estoque
     }
 
     /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getQuantidade()
@@ -110,5 +102,13 @@ class Estoque
         $this->produto = $produto;
     }
 
+    public function toArray()
+    {
+        return [
+            'id' => $this->getId(),
+            'quantidade' => $this->getQuantidade(),
+            'filial' => $this->getFilial()->toArray(),
+        ];
+    }
 
 }

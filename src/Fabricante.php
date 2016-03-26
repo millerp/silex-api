@@ -2,8 +2,8 @@
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Fabricante
@@ -29,6 +29,14 @@ class Fabricante
     private $nome;
 
     /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @return string
      */
     public function getNome()
@@ -44,21 +52,6 @@ class Fabricante
         $this->nome = $nome;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
     /*
      *
      * @return array
@@ -66,10 +59,11 @@ class Fabricante
     public function toArray()
     {
         return [
-            'id' => $this->id,
-            'nome' => $this->nome
+            'id' => $this->getId(),
+            'nome' => $this->getNome()
         ];
     }
+
     /*
      * Validator
      */
