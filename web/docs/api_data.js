@@ -417,7 +417,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "fabricante_id",
+            "field": "fabricante",
             "description": "<p>ID do Fabricante</p>"
           },
           {
@@ -453,7 +453,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "estoque.quantidade",
-            "description": "<p>Quantidade</p>"
+            "description": "<p>Quantidade de Produtos em Estoque</p>"
           }
         ]
       }
@@ -480,7 +480,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"id\": 1,\n    \"nome\": \"Produto 1\"\n}",
+          "content": "HTTP/1.1 200 OK\n    {\n        \"id\": 1,\n        \"nome\": \"Produto 1\",\n        \"garantia\": \"6 meses\",\n        \"grade\": \"0\",\n        \"fabricante\": {\n            \"id\": 1,\n            \"nome\": \"Fabricante 1\"\n        },\n        \"estoque\": [\n        {\n            \"id\": 1,\n            \"quantidade\": 10,\n            \"filial\": {\n                \"id\": 1,\n                \"nome\": \"Filial 1\"\n            }\n        }\n       ]\n   }",
           "type": "json"
         }
       ]
