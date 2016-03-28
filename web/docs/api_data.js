@@ -1,6 +1,6 @@
 define({ "api": [
   {
-    "type": "DELETE",
+    "type": "delete",
     "url": "/fabricante/:id",
     "title": "Remove Fabricante por ID",
     "name": "DeleteFabricante",
@@ -10,7 +10,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>ID Unico do Fabricante</p>"
@@ -23,7 +23,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -50,14 +50,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -70,7 +70,7 @@ define({ "api": [
     "groupTitle": "Fabricante"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/fabricante",
     "title": "Busca todos os Fabricantes",
     "name": "GetFabricante",
@@ -80,7 +80,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -107,7 +107,7 @@ define({ "api": [
     "groupTitle": "Fabricante"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/fabricante/:id",
     "title": "Busca Fabricante por ID",
     "name": "GetFabricanteById",
@@ -117,7 +117,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>ID Unico do Fabricante</p>"
@@ -130,7 +130,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -164,7 +164,7 @@ define({ "api": [
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -177,7 +177,7 @@ define({ "api": [
     "groupTitle": "Fabricante"
   },
   {
-    "type": "POST",
+    "type": "post",
     "url": "/fabricante",
     "title": "Adiciona novo Fabricante",
     "name": "PostFabricante",
@@ -187,7 +187,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "nome",
             "description": "<p>Nome do Fabricante</p>"
@@ -200,7 +200,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -234,7 +234,7 @@ define({ "api": [
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -247,7 +247,7 @@ define({ "api": [
     "groupTitle": "Fabricante"
   },
   {
-    "type": "PUT",
+    "type": "put",
     "url": "/fabricante/:id",
     "title": "Atualiza Fabricante por ID",
     "name": "PutFabricante",
@@ -257,14 +257,14 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>ID Unico do Fabricante</p>"
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "nome",
             "description": "<p>Nome do Fabricante</p>"
@@ -277,7 +277,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -304,14 +304,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -324,7 +324,7 @@ define({ "api": [
     "groupTitle": "Fabricante"
   },
   {
-    "type": "DELETE",
+    "type": "delete",
     "url": "/filial/:id",
     "title": "Remove Filial por ID",
     "name": "DeleteFilial",
@@ -334,7 +334,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>ID Unico da Filial</p>"
@@ -347,7 +347,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -374,14 +374,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -394,7 +394,7 @@ define({ "api": [
     "groupTitle": "Filial"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/filial",
     "title": "Busca todas as Filiais",
     "name": "GetFilial",
@@ -404,7 +404,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -431,7 +431,7 @@ define({ "api": [
     "groupTitle": "Filial"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/filial/:id",
     "title": "Busca Filial por ID",
     "name": "GetFilialById",
@@ -441,7 +441,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>ID Unico da Filial</p>"
@@ -454,7 +454,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -481,14 +481,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -501,7 +501,7 @@ define({ "api": [
     "groupTitle": "Filial"
   },
   {
-    "type": "POST",
+    "type": "post",
     "url": "/filial",
     "title": "Adiciona nova Filial",
     "name": "PostFilial",
@@ -511,7 +511,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "nome",
             "description": "<p>Nome da Filial</p>"
@@ -524,7 +524,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -551,14 +551,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -571,7 +571,7 @@ define({ "api": [
     "groupTitle": "Filial"
   },
   {
-    "type": "PUT",
+    "type": "put",
     "url": "/filial/:id",
     "title": "Atualiza Filial por ID",
     "name": "PutFilial",
@@ -581,14 +581,14 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>ID Unico da Filial</p>"
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "nome",
             "description": "<p>Nome da Filial</p>"
@@ -601,7 +601,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -628,14 +628,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -648,7 +648,7 @@ define({ "api": [
     "groupTitle": "Filial"
   },
   {
-    "type": "DELETE",
+    "type": "delete",
     "url": "/produto/:id",
     "title": "Remove Produto por ID",
     "name": "DeleteProduto",
@@ -658,7 +658,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>ID Unico do Produto</p>"
@@ -671,7 +671,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -698,14 +698,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -718,7 +718,7 @@ define({ "api": [
     "groupTitle": "Produto"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/estoque/:produto_id/:filial_id",
     "title": "Estoque por filial",
     "name": "GetEstoqueByFilial",
@@ -728,14 +728,14 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "produto_id",
             "description": "<p>ID do Produto</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "filial_id",
             "description": "<p>ID da Filial</p>"
@@ -748,7 +748,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -775,14 +775,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -795,7 +795,7 @@ define({ "api": [
     "groupTitle": "Produto"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/estoque/:produto_id",
     "title": "Estoque em todas as Filiais",
     "name": "GetEstoqueByProduto",
@@ -805,7 +805,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "produto_id",
             "description": "<p>ID do Produto</p>"
@@ -818,7 +818,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -845,14 +845,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -865,7 +865,7 @@ define({ "api": [
     "groupTitle": "Produto"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/produto",
     "title": "Busca todos os Produtos",
     "name": "GetProduto",
@@ -875,7 +875,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -902,99 +902,20 @@ define({ "api": [
     "groupTitle": "Produto"
   },
   {
-    "type": "GET",
+    "type": "get",
     "url": "/produto/:id",
     "title": "Busca Produto por ID",
     "name": "GetProdutoById",
-    "group": "Produto",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "status",
-            "description": "<p>200</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "object[]",
-            "optional": false,
-            "field": "response",
-            "description": "<p>Todos os Produtos.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n {\n     \"id\": 5,\n     \"nome\": \"Produto 1\",\n     \"garantia\": \"6 meses\",\n     \"grade\": \"0\",\n     \"fabricante\": {\n         \"id\": 3,\n         \"nome\": \"Fabricante 1\"\n     },\n     \"estoque\": [\n     {\n         \"id\": 1,\n         \"quantidade\": 51,\n         \"filial\": {\n             \"id\": 1,\n             \"nome\": \"Filial 1\"\n         }\n     },\n     {\n         \"id\": 5,\n         \"quantidade\": 10,\n         \"filial\": {\n             \"id\": 2,\n             \"nome\": \"Filial 2\"\n         }\n      }\n    ]\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "web/index.php",
-    "groupTitle": "Produto"
-  },
-  {
-    "type": "POST",
-    "url": "/produto",
-    "title": "Adiciona novo Produto",
-    "name": "PostProduto",
     "group": "Produto",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "number",
             "optional": false,
-            "field": "nome",
-            "description": "<p>Nome do Produto</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "fabricante",
-            "description": "<p>ID do Fabricante</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "garantia",
-            "description": "<p>Período de Garantia</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "grade",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "object",
-            "optional": false,
-            "field": "estoque",
-            "description": "<p>Estoque por Filial</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "estoque.filial",
-            "description": "<p>ID da Filial</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "estoque.quantidade",
-            "description": "<p>Quantidade de Produtos em Estoque</p>"
+            "field": "id",
+            "description": "<p>ID Unico do Produto</p>"
           }
         ]
       }
@@ -1004,7 +925,78 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object[]",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Todos os Produtos.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n {\n     \"id\": 5,\n     \"nome\": \"Produto 1\",\n     \"garantia\": \"6 meses\",\n     \"grade\": \"0\",\n     \"fabricante\": {\n         \"id\": 3,\n         \"nome\": \"Fabricante 1\"\n     },\n     \"estoque\": [\n     {\n         \"id\": 1,\n         \"quantidade\": 51,\n         \"filial\": {\n             \"id\": 1,\n             \"nome\": \"Filial 1\"\n         }\n     },\n     {\n         \"id\": 5,\n         \"quantidade\": 10,\n         \"filial\": {\n             \"id\": 2,\n             \"nome\": \"Filial 2\"\n         }\n      }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Produto"
+  },
+  {
+    "type": "post",
+    "url": "/produto",
+    "title": "Adiciona novo Produto",
+    "name": "PostProduto",
+    "group": "Produto",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "nome",
+            "description": "<p>Nome do Produto</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "fabricante",
+            "description": "<p>ID do Fabricante</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "garantia",
+            "description": "<p>Período de Garantia</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "grade",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -1031,14 +1023,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"
@@ -1051,7 +1043,7 @@ define({ "api": [
     "groupTitle": "Produto"
   },
   {
-    "type": "PUT",
+    "type": "put",
     "url": "/produto/:id",
     "title": "Atualiza Produto",
     "name": "PutProduto",
@@ -1061,52 +1053,38 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID Unico do Produto</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
             "optional": false,
             "field": "nome",
             "description": "<p>Nome do Produto</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "fabricante",
             "description": "<p>ID do Fabricante</p>"
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "garantia",
             "description": "<p>Período de Garantia</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "grade",
             "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "object",
-            "optional": false,
-            "field": "estoque",
-            "description": "<p>Estoque por Filial</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "estoque.filial",
-            "description": "<p>ID da Filial</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "estoque.quantidade",
-            "description": "<p>Quantidade de Produtos em Estoque</p>"
           }
         ]
       }
@@ -1116,7 +1094,7 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
@@ -1143,14 +1121,14 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
           },
           {
             "group": "Error 4xx",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Erro</p>"

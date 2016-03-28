@@ -15,10 +15,10 @@ $app->get('/', function () use ($app) {
 
 
 /**
- * @api {GET} /fabricante Busca todos os Fabricantes
+ * @api {get} /fabricante Busca todos os Fabricantes
  * @apiName GetFabricante
  * @apiGroup    Fabricante
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object[]} response Todos os Fabricantes.
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
@@ -42,16 +42,16 @@ $app->get('/fabricante', function () use ($app, $em) {
 });
 
 /**
- * @api {POST} /fabricante Adiciona novo Fabricante
+ * @api {post} /fabricante Adiciona novo Fabricante
  * @apiName PostFabricante
  * @apiGroup Fabricante
  *
- * @apiParam {String} nome Nome do Fabricante
+ * @apiParam {string} nome Nome do Fabricante
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados do Fabricante criado
  * @apiError {Boelan} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *  {
@@ -82,16 +82,16 @@ $app->post('/fabricante', function (Request $request) use ($app, $em) {
 });
 
 /**
- * @api {GET} /fabricante/:id Busca Fabricante por ID
+ * @api {get} /fabricante/:id Busca Fabricante por ID
  * @apiName GetFabricanteById
  * @apiGroup Fabricante
  *
- * @apiParam {Number} id ID Unico do Fabricante
+ * @apiParam {number} id ID Unico do Fabricante
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados do Fabricante
  * @apiError {Boelan} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *   HTTP/1.1 200 OK
  *  {
@@ -112,17 +112,17 @@ $app->get('/fabricante/{id}', function ($id) use ($app, $em) {
 });
 
 /**
- * @api {PUT} /fabricante/:id Atualiza Fabricante por ID
+ * @api {put} /fabricante/:id Atualiza Fabricante por ID
  * @apiName PutFabricante
  * @apiGroup Fabricante
  *
- * @apiParam {Number} id ID Unico do Fabricante
- * @apiParam {String} nome Nome do Fabricante
+ * @apiParam {number} id ID Unico do Fabricante
+ * @apiParam {string} nome Nome do Fabricante
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados do Fabricante
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *  {
@@ -156,16 +156,16 @@ $app->put('/fabricante/{id}', function ($id, Request $request) use ($app, $em) {
 });
 
 /**
- * @api {DELETE} /fabricante/:id Remove Fabricante por ID
+ * @api {delete} /fabricante/:id Remove Fabricante por ID
  * @apiName DeleteFabricante
  * @apiGroup Fabricante
  *
- * @apiParam {Number} id ID Unico do Fabricante
+ * @apiParam {number} id ID Unico do Fabricante
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} message Mensagem de Sucesso
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *  {
@@ -175,7 +175,7 @@ $app->put('/fabricante/{id}', function ($id, Request $request) use ($app, $em) {
  */
 $app->delete('/fabricante/{id}', function ($id) use ($app, $em) {
 
-    $fabricante = $em->createQuery('DELETE Fabricante f WHERE f.id = ?1');
+    $fabricante = $em->createQuery('delete Fabricante f WHERE f.id = ?1');
     $fabricante->setParameter(1, $id);
 
     if ($fabricante->execute()) {
@@ -189,10 +189,10 @@ $app->delete('/fabricante/{id}', function ($id) use ($app, $em) {
 });
 
 /**
- * @api {GET} /produto Busca todos os Produtos
+ * @api {get} /produto Busca todos os Produtos
  * @apiName GetProduto
  * @apiGroup    Produto
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object[]} response Todos os Produtos.
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -232,22 +232,19 @@ $app->get('/produto', function () use ($app, $em) {
 });
 
 /**
- * @api {POST} /produto Adiciona novo Produto
+ * @api {post} /produto Adiciona novo Produto
  * @apiName PostProduto
  * @apiGroup Produto
  *
- * @apiParam {String} nome Nome do Produto
- * @apiParam {Number} fabricante ID do Fabricante
- * @apiParam {String} garantia Período de Garantia
- * @apiParam {Number} grade
- * @apiParam {object} estoque Estoque por Filial
- * @apiParam {Number} estoque.filial ID da Filial
- * @apiParam {Number} estoque.quantidade Quantidade de Produtos em Estoque
+ * @apiParam {string} nome Nome do Produto
+ * @apiParam {number} fabricante ID do Fabricante
+ * @apiParam {string} garantia Período de Garantia
+ * @apiParam {number} grade
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados do Produto criado
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *      {
@@ -299,15 +296,15 @@ $app->post('/produto', function (Request $request) use ($app, $em) {
     $em->persist($produto);
 
     // Adiciona Estoque
-    $estoque = new Estoque();
-    $estoque->setFilial($filial);
-    $estoque->setQuantidade($request->get('estoque')['quantidade']);
-    $estoque->setProduto($produto);
-    $em->persist($estoque);
+//    $estoque = new Estoque();
+//    $estoque->setFilial($filial);
+//    $estoque->setQuantidade($request->get('estoque')['quantidade']);
+//    $estoque->setProduto($produto);
+//    $em->persist($estoque);
     $em->flush();
     $em->clear();
 
-    $produto->setEstoque($estoque);
+//    $produto->setEstoque($estoque);
 
     if ($produto->getId()) {
         return $app->json(['status' => 200, 'response' => $produto->toArray()]);
@@ -318,10 +315,13 @@ $app->post('/produto', function (Request $request) use ($app, $em) {
 
 
 /**
- * @api {GET} /produto/:id Busca Produto por ID
+ * @api {get} /produto/:id Busca Produto por ID
  * @apiName GetProdutoById
  * @apiGroup    Produto
- * @apiSuccess {Number} status 200
+ *
+ * @apiParam {number} id ID Unico do Produto
+ *
+ * @apiSuccess {number} status 200
  * @apiSuccess {object[]} response Todos os Produtos.
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -366,22 +366,21 @@ $app->get('/produto/{id}', function ($id) use ($app, $em) {
 });
 
 /**
- * @api {PUT} /produto/:id Atualiza Produto
+ * @api {put} /produto/:id Atualiza Produto
  * @apiName PutProduto
  * @apiGroup Produto
  *
- * @apiParam {String} nome Nome do Produto
- * @apiParam {Number} fabricante ID do Fabricante
- * @apiParam {String} garantia Período de Garantia
- * @apiParam {Number} grade
- * @apiParam {object} estoque Estoque por Filial
- * @apiParam {Number} estoque.filial ID da Filial
- * @apiParam {Number} estoque.quantidade Quantidade de Produtos em Estoque
+ * @apiParam {number} id ID Unico do Produto
  *
- * @apiSuccess {Number} status 200
+ * @apiParam {string} nome Nome do Produto
+ * @apiParam {number} fabricante ID do Fabricante
+ * @apiParam {string} garantia Período de Garantia
+ * @apiParam {number} grade
+ *
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados do Produto atualizado
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *      {
@@ -435,26 +434,26 @@ $app->put('/produto/{id}', function ($id, Request $request) use ($app, $em) {
 
     // Persiste no banco de dados
     $em->persist($produto);
-    $filialId = $filial->getId();
-    $produtoId = $produto->getId();
+//    $filialId = $filial->getId();
+//    $produtoId = $produto->getId();
 
     // Atualiza Estoque
-    $estoque = $em->createQuery("SELECT e FROM \Estoque e WHERE e.filial = $filialId AND e.produto = $produtoId")->getOneOrNullResult();
-    if (!$estoque) {
-        $estoque = new Estoque();
-    }
+//    $estoque = $em->createQuery("SELECT e FROM \Estoque e WHERE e.filial = $filialId AND e.produto = $produtoId")->getOneOrNullResult();
+//    if (!$estoque) {
+//        $estoque = new Estoque();
+//    }
 
-    $estoque->setFilial($filial);
-    $estoque->setQuantidade($request->get('estoque')['quantidade']);
-    $estoque->setProduto($produto);
-    $em->persist($estoque);
+//    $estoque->setFilial($filial);
+//    $estoque->setQuantidade($request->get('estoque')['quantidade']);
+//    $estoque->setProduto($produto);
+//    $em->persist($estoque);
 
     $em->flush();
     $em->clear();
 
-    if ($estoque) {
-        $produto->setEstoque($estoque);
-    }
+//    if ($estoque) {
+//        $produto->setEstoque($estoque);
+//    }
 
     if ($produto->getId()) {
         return $app->json(['status' => 200, 'response' => $produto->toArray()]);
@@ -466,16 +465,16 @@ $app->put('/produto/{id}', function ($id, Request $request) use ($app, $em) {
 });
 
 /**
- * @api {DELETE} /produto/:id Remove Produto por ID
+ * @api {delete} /produto/:id Remove Produto por ID
  * @apiName DeleteProduto
  * @apiGroup Produto
  *
- * @apiParam {Number} id ID Unico do Produto
+ * @apiParam {number} id ID Unico do Produto
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} message Mensagem de Sucesso
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *  {
@@ -485,7 +484,7 @@ $app->put('/produto/{id}', function ($id, Request $request) use ($app, $em) {
  */
 $app->delete('/produto/{id}', function ($id) use ($app, $em) {
 
-    $produto = $em->createQuery('DELETE Produto p WHERE p.id = ?1');
+    $produto = $em->createQuery('delete Produto p WHERE p.id = ?1');
     $produto->setParameter(1, $id);
 
     if ($produto->execute()) {
@@ -499,10 +498,10 @@ $app->delete('/produto/{id}', function ($id) use ($app, $em) {
 });
 
 /**
- * @api {GET} /filial Busca todas as Filiais
+ * @api {get} /filial Busca todas as Filiais
  * @apiName GetFilial
  * @apiGroup    Filial
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object[]} response Todas as Filiais
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
@@ -526,16 +525,16 @@ $app->get('/filial', function () use ($app, $em) {
 });
 
 /**
- * @api {POST} /filial Adiciona nova Filial
+ * @api {post} /filial Adiciona nova Filial
  * @apiName PostFilial
  * @apiGroup Filial
  *
- * @apiParam {String} nome Nome da Filial
+ * @apiParam {string} nome Nome da Filial
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados da Filial criada
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *  {
@@ -566,17 +565,17 @@ $app->post('/filial', function (Request $request) use ($app, $em) {
 });
 
 /**
- * @api {PUT} /filial/:id Atualiza Filial por ID
+ * @api {put} /filial/:id Atualiza Filial por ID
  * @apiName PutFilial
  * @apiGroup Filial
  *
- * @apiParam {Number} id ID Unico da Filial
- * @apiParam {String} nome Nome da Filial
+ * @apiParam {number} id ID Unico da Filial
+ * @apiParam {string} nome Nome da Filial
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados da Filial
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *  {
@@ -611,16 +610,16 @@ $app->put('/filial/{id}', function ($id, Request $request) use ($app, $em) {
 
 
 /**
- * @api {GET} /filial/:id Busca Filial por ID
+ * @api {get} /filial/:id Busca Filial por ID
  * @apiName GetFilialById
  * @apiGroup Filial
  *
- * @apiParam {Number} id ID Unico da Filial
+ * @apiParam {number} id ID Unico da Filial
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados da Filial
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *   HTTP/1.1 200 OK
  *  {
@@ -641,16 +640,16 @@ $app->get('/filial/{id}', function ($id) use ($app, $em) {
 });
 
 /**
- * @api {DELETE} /filial/:id Remove Filial por ID
+ * @api {delete} /filial/:id Remove Filial por ID
  * @apiName DeleteFilial
  * @apiGroup Filial
  *
- * @apiParam {Number} id ID Unico da Filial
+ * @apiParam {number} id ID Unico da Filial
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} message Mensagem de Sucesso
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  *  {
@@ -660,7 +659,7 @@ $app->get('/filial/{id}', function ($id) use ($app, $em) {
  */
 $app->delete('/filial/{id}', function ($id) use ($app, $em) {
 
-    $filial = $em->createQuery('DELETE Filial f WHERE f.id = ?1');
+    $filial = $em->createQuery('delete Filial f WHERE f.id = ?1');
     $filial->setParameter(1, $id);
 
     if ($filial->execute()) {
@@ -674,16 +673,16 @@ $app->delete('/filial/{id}', function ($id) use ($app, $em) {
 });
 
 /**
- * @api {GET} /estoque/:produto_id Estoque em todas as Filiais
+ * @api {get} /estoque/:produto_id Estoque em todas as Filiais
  * @apiName GetEstoqueByProduto
  * @apiGroup Produto
  *
- * @apiParam {Number} produto_id ID do Produto
+ * @apiParam {number} produto_id ID do Produto
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados do Estoque
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
  * {
@@ -722,17 +721,17 @@ $app->get('/estoque/{produto_id}', function ($produto_id) use ($app, $em) {
 });
 
 /**
- * @api {GET} /estoque/:produto_id/:filial_id Estoque por filial
+ * @api {get} /estoque/:produto_id/:filial_id Estoque por filial
  * @apiName GetEstoqueByFilial
  * @apiGroup Produto
  *
- * @apiParam {Number} produto_id ID do Produto
- * @apiParam {Number} filial_id ID da Filial
+ * @apiParam {number} produto_id ID do Produto
+ * @apiParam {number} filial_id ID da Filial
  *
- * @apiSuccess {Number} status 200
+ * @apiSuccess {number} status 200
  * @apiSuccess {object} response Dados do Estoque
- * @apiError {Number} status 0
- * @apiError {String} message Mensagem de Erro
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
  *
  * @apiSuccessExample {json} Success-Response:
  *  HTTP/1.1 200 OK
