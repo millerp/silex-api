@@ -189,7 +189,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "bome",
+            "field": "nome",
             "description": "<p>Nome do Fabricante</p>"
           }
         ]
@@ -322,6 +322,400 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "web/index.php",
     "groupTitle": "Fabricante"
+  },
+  {
+    "type": "DELETE",
+    "url": "/filial/:id",
+    "title": "Remove Filial por ID",
+    "name": "DeleteFilial",
+    "group": "Filial",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID Unico da Filial</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Sucesso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": 200,\n    \"message\": \"Filial Removida\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Boelan",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Filial"
+  },
+  {
+    "type": "GET",
+    "url": "/filial",
+    "title": "Busca todas as Filiais",
+    "name": "GetFilial",
+    "group": "Filial",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Todas as Filiais</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": 200,\n    \"response\": [\n      {\n        \"id\": 1,\n        \"nome\": \"Filial 1\"\n      },\n      {\n        \"id\": 2,\n        \"nome\": \"Filial 2\"\n      }\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Filial"
+  },
+  {
+    "type": "GET",
+    "url": "/filial/:id",
+    "title": "Busca Filial por ID",
+    "name": "GetFilialById",
+    "group": "Filial",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID Unico da Filial</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Dados da Filial</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n    \"id\": 1,\n    \"nome\": \"Filial 1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Boelan",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Filial"
+  },
+  {
+    "type": "POST",
+    "url": "/filial",
+    "title": "Adiciona nova Filial",
+    "name": "PostFilial",
+    "group": "Filial",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nome",
+            "description": "<p>Nome da Filial</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Dados da Filial criada</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"id\": 1,\n    \"nome\": \"Filial 1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Boelan",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Filial"
+  },
+  {
+    "type": "PUT",
+    "url": "/filial/:id",
+    "title": "Atualiza Filial por ID",
+    "name": "PutFilial",
+    "group": "Filial",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID Unico da Filial</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nome",
+            "description": "<p>Nome da Filial</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Dados da Filial</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"id\": 1,\n    \"nome\": \"Filial 1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Boelan",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Filial"
+  },
+  {
+    "type": "DELETE",
+    "url": "/produto/:id",
+    "title": "Remove Produto por ID",
+    "name": "DeleteProduto",
+    "group": "Produto",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID Unico do Produto</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Sucesso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": 200,\n    \"message\": \"Fabricante Removido.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Boelan",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Produto"
   },
   {
     "type": "GET",
@@ -474,6 +868,118 @@ define({ "api": [
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Produto criado</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n    {\n        \"id\": 1,\n        \"nome\": \"Produto 1\",\n        \"garantia\": \"6 meses\",\n        \"grade\": \"0\",\n        \"fabricante\": {\n            \"id\": 1,\n            \"nome\": \"Fabricante 1\"\n        },\n        \"estoque\": [\n        {\n            \"id\": 1,\n            \"quantidade\": 10,\n            \"filial\": {\n                \"id\": 1,\n                \"nome\": \"Filial 1\"\n            }\n        }\n       ]\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Produto"
+  },
+  {
+    "type": "PUT",
+    "url": "/produto",
+    "title": "Atualiza Produto",
+    "name": "PutProduto",
+    "group": "Produto",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nome",
+            "description": "<p>Nome do Produto</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "fabricante",
+            "description": "<p>ID do Fabricante</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "garantia",
+            "description": "<p>Período de Garantia</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "grade",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": false,
+            "field": "estoque",
+            "description": "<p>Estoque por Filial</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "estoque.filial",
+            "description": "<p>ID da Filial</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "estoque.quantidade",
+            "description": "<p>Quantidade de Produtos em Estoque</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Dados do Produto atualizado</p>"
           }
         ]
       },

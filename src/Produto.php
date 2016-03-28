@@ -57,7 +57,7 @@ class Produto
      *
      * @ORM\OneToMany(targetEntity="Estoque",mappedBy="produto")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id", referencedColumnName="produto_id")
+     *   @ORM\JoinColumn(name="id", referencedColumnName="produto_id", onDelete="CASCADE")
      * })
      */
     private $estoque;

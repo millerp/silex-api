@@ -1,6 +1,9 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Filial
@@ -60,5 +63,12 @@ class Filial
         ];
     }
 
+    /*
+     * Validator
+     */
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('nome', new NotBlank(['message' => 'Campo {nome} é obrigatório']));
+    }
 
 }
