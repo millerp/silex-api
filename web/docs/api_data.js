@@ -719,6 +719,153 @@ define({ "api": [
   },
   {
     "type": "GET",
+    "url": "/estoque/:produto_id/:filial_id",
+    "title": "Estoque por filial",
+    "name": "GetEstoqueByFilial",
+    "group": "Produto",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "produto_id",
+            "description": "<p>ID do Produto</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "filial_id",
+            "description": "<p>ID da Filial</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Dados do Estoque</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n     \"status\": 200,\n     \"response\": [\n      {\n          \"id\": 2,\n          \"quantidade\": 10,\n          \"filial\": {\n               \"id\": 1,\n               \"nome\": \"Filial 1\"\n          }\n      }\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Boelan",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Produto"
+  },
+  {
+    "type": "GET",
+    "url": "/estoque/:produto_id",
+    "title": "Estoque em todas as Filiais",
+    "name": "GetEstoqueByProduto",
+    "group": "Produto",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "produto_id",
+            "description": "<p>ID do Produto</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Bolean",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Dados do Estoque</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n     \"status\": 200,\n     \"response\": [\n      {\n          \"id\": 2,\n          \"quantidade\": 10,\n          \"filial\": {\n               \"id\": 1,\n               \"nome\": \"Filial 1\"\n          }\n      },\n      {\n          \"id\": 2,\n          \"quantidade\": 20,\n          \"filial\": {\n               \"id\": 2,\n               \"nome\": \"Filial 2\"\n          }\n      },\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Boelan",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Produto"
+  },
+  {
+    "type": "GET",
     "url": "/produto",
     "title": "Busca todos os Produtos",
     "name": "GetProduto",

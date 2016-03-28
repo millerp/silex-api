@@ -108,6 +108,7 @@ class Estoque
             'id' => $this->getId(),
             'quantidade' => $this->getQuantidade(),
             'filial' => $this->getFilial()->toArray(),
+            'produto_id' => $this->getProduto()->getId(),
         ];
     }
 

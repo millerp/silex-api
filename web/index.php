@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
 $app = new Silex\Application();
-$app['debug'] = true; // Enable Debug
+$app['debug'] = getenv('APP_DEV'); // Enable Debug
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
 $app->get('/', function () use ($app) {
@@ -671,6 +671,100 @@ $app->delete('/filial/{id}', function ($id) use ($app, $em) {
 
 })->convert('id', function ($id) {
     return (int)$id;
+});
+
+/**
+ * @api {GET} /estoque/:produto_id Estoque em todas as Filiais
+ * @apiName GetEstoqueByProduto
+ * @apiGroup Produto
+ *
+ * @apiParam {Number} produto_id ID do Produto
+ *
+ * @apiSuccess {Bolean} status 200
+ * @apiSuccess {Object} response Dados do Estoque
+ * @apiError {Boelan} status 0
+ * @apiError {String} message Mensagem de Erro
+ * @apiSuccessExample {json} Success-Response:
+ *  HTTP/1.1 200 OK
+ * {
+ *      "status": 200,
+ *      "response": [
+ *       {
+ *           "id": 2,
+ *           "quantidade": 10,
+ *           "filial": {
+ *                "id": 1,
+ *                "nome": "Filial 1"
+ *           }
+ *       },
+ *       {
+ *           "id": 2,
+ *           "quantidade": 20,
+ *           "filial": {
+ *                "id": 2,
+ *                "nome": "Filial 2"
+ *           }
+ *       },
+ *    ]
+ * }
+ */
+$app->get('/estoque/{produto_id}', function ($produto_id) use ($app, $em) {
+
+    $estoque = $em->createQuery('SELECT e,f FROM Estoque e LEFT JOIN e.filial f WHERE e.produto = ?1');
+    $estoque->setParameter(1, $produto_id);
+
+    if ($estoque->execute()) {
+        return $app->json(['status' => 200, 'response' => $estoque->getArrayResult()]);
+    }
+
+    return $app->json(['status' => 0, 'message' => 'Estoque não encontrado']);
+
+});
+
+/**
+ * @api {GET} /estoque/:produto_id/:filial_id Estoque por filial
+ * @apiName GetEstoqueByFilial
+ * @apiGroup Produto
+ *
+ * @apiParam {Number} produto_id ID do Produto
+ * @apiParam {Number} filial_id ID da Filial
+ *
+ * @apiSuccess {Bolean} status 200
+ * @apiSuccess {Object} response Dados do Estoque
+ * @apiError {Boelan} status 0
+ * @apiError {String} message Mensagem de Erro
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *  HTTP/1.1 200 OK
+ * {
+ *      "status": 200,
+ *      "response": [
+ *       {
+ *           "id": 2,
+ *           "quantidade": 10,
+ *           "filial": {
+ *                "id": 1,
+ *                "nome": "Filial 1"
+ *           }
+ *       }
+ *    ]
+ * }
+ */
+$app->get('/estoque/{produto_id}/{filial_id}', function ($produto_id, $filial_id) use ($app, $em) {
+    $estoque = $em->createQueryBuilder()
+        ->select('e,f')
+        ->from('Estoque', 'e')
+        ->where('e.produto = :produto_id AND e.filial = :filial_id')
+        ->join('e.filial', 'f')
+        ->setParameters(new \Doctrine\Common\Collections\ArrayCollection(array(
+            new \Doctrine\ORM\Query\Parameter('produto_id', $produto_id),
+            new \Doctrine\ORM\Query\Parameter('filial_id', $filial_id)
+        )))->getQuery()->getArrayResult();
+
+    if (isset($estoque)) {
+        return $app->json(['status' => 200, 'response' => $estoque]);
+    }
+    return $app->json(['status' => 0, 'message' => 'Estoque não encontrado']);
 });
 
 $app->run();
