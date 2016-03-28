@@ -9,6 +9,10 @@ $app = new Silex\Application();
 $app['debug'] = getenv('APP_DEV'); // Enable Debug
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
+$app->after(function (Request $request, \Symfony\Component\HttpFoundation\Response $response) {
+    $response->headers->set('Access-Control-Allow-Origin', '*');
+});
+
 $app->get('/', function () use ($app) {
     return $app->redirect('/docs');
 });
