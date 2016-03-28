@@ -1,6 +1,6 @@
 define({
   "name": "API de Consulta de produtos",
-  "version": "0.1.0",
+  "version": "0.1.10",
   "description": "API que permita consultar e atualizar o estoque de produtos.",
   "title": "Consulta de produtos",
   "order": [
@@ -11,7 +11,7 @@ define({
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-03-28T20:29:26.431Z",
+    "time": "2016-03-28T22:21:10.178Z",
     "url": "http://apidocjs.com",
     "version": "0.15.1"
   }

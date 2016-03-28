@@ -23,14 +23,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Sucesso</p>"
@@ -50,7 +50,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -80,14 +80,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": false,
             "field": "response",
             "description": "<p>Todos os Fabricantes.</p>"
@@ -130,14 +130,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Fabricante</p>"
@@ -200,14 +200,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Fabricante criado</p>"
@@ -277,14 +277,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Fabricante</p>"
@@ -304,7 +304,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -347,14 +347,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Sucesso</p>"
@@ -374,7 +374,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -404,14 +404,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": false,
             "field": "response",
             "description": "<p>Todas as Filiais</p>"
@@ -454,14 +454,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados da Filial</p>"
@@ -481,7 +481,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -524,14 +524,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados da Filial criada</p>"
@@ -551,7 +551,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -601,14 +601,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados da Filial</p>"
@@ -628,7 +628,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -671,14 +671,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "message",
             "description": "<p>Mensagem de Sucesso</p>"
@@ -698,7 +698,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -748,14 +748,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Estoque</p>"
@@ -775,7 +775,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -818,14 +818,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Estoque</p>"
@@ -845,7 +845,7 @@ define({ "api": [
         "Error 4xx": [
           {
             "group": "Error 4xx",
-            "type": "Boelan",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>0</p>"
@@ -875,14 +875,14 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Bolean",
+            "type": "Number",
             "optional": false,
             "field": "status",
             "description": "<p>200</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": false,
             "field": "response",
             "description": "<p>Todos os Produtos.</p>"
@@ -919,7 +919,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": false,
             "field": "response",
             "description": "<p>Todos os Produtos.</p>"
@@ -977,7 +977,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "estoque",
             "description": "<p>Estoque por Filial</p>"
@@ -1011,7 +1011,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Produto criado</p>"
@@ -1052,7 +1052,7 @@ define({ "api": [
   },
   {
     "type": "PUT",
-    "url": "/produto",
+    "url": "/produto/:id",
     "title": "Atualiza Produto",
     "name": "PutProduto",
     "group": "Produto",
@@ -1089,7 +1089,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "estoque",
             "description": "<p>Estoque por Filial</p>"
@@ -1123,7 +1123,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "response",
             "description": "<p>Dados do Produto atualizado</p>"
