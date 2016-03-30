@@ -770,4 +770,62 @@ $app->get('/estoque/{produto_id}/{filial_id}', function ($produto_id, $filial_id
     return $app->json(['status' => 0, 'message' => 'Estoque não encontrado']);
 });
 
+/**
+ * @api {put} /estoque/:produto_id/:filial_id Atualiza Estoque
+ * @apiName PutEstoqueByFilial
+ * @apiGroup Produto
+ *
+ * @apiParam {number} produto_id ID do Produto
+ * @apiParam {number} filial_id ID da Filial
+ * @apiParam {number} quantidade Quantidade em estoque
+ *
+ * @apiSuccess {number} status 200
+ * @apiSuccess {object} response Mensagem de Sucesso
+ * @apiError {number} status 0
+ * @apiError {string} message Mensagem de Erro
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *  HTTP/1.1 200 OK
+ * {
+ *      "status": 200,
+ *      "response": "Estoque Atualizado"
+ * }
+ */
+$app->put('/estoque/{produto_id}/{filial_id}', function ($produto_id, $filial_id, Request $request) use ($app, $em) {
+
+    if (!$request->get('quantidade')) {
+        return $app->json(['status' => 0, 'message' => 'Informe a Quantidade']);
+    }
+
+    $estoque = $em->createQueryBuilder()
+        ->select('e,f')
+        ->from('Estoque', 'e')
+        ->where('e.produto = :produto_id AND e.filial = :filial_id')
+        ->join('e.filial', 'f')
+        ->setParameters(new \Doctrine\Common\Collections\ArrayCollection(array(
+            new \Doctrine\ORM\Query\Parameter('produto_id', $produto_id),
+            new \Doctrine\ORM\Query\Parameter('filial_id', $filial_id)
+        )))->getQuery()->getOneOrNullResult();
+
+    if ($estoque) {
+        $estoque->setQuantidade($request->get('quantidade'));
+        $em->flush($estoque);
+    } else {
+        $estoque = new Estoque();
+        $estoque->setProduto($em->getRepository(Produto::class)->find($produto_id));
+        $estoque->setFilial($em->getRepository(Filial::class)->find($filial_id));
+        $estoque->setQuantidade($request->get('quantidade'));
+        $em->persist($estoque);
+        $em->flush($estoque);
+    }
+
+    $em->clear();
+
+    if (isset($estoque)) {
+        return $app->json(['status' => 200, 'response' => $estoque->toArray()]);
+    }
+
+    return $app->json(['status' => 0, 'message' => 'Não foi possivel atualizar o estoque']);
+});
+
 $app->run();
