@@ -1044,6 +1044,90 @@ define({ "api": [
   },
   {
     "type": "put",
+    "url": "/estoque/:produto_id/:filial_id",
+    "title": "Atualiza Estoque",
+    "name": "PutEstoqueByFilial",
+    "group": "Produto",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "produto_id",
+            "description": "<p>ID do Produto</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "filial_id",
+            "description": "<p>ID da Filial</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "quantidade",
+            "description": "<p>Quantidade em estoque</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>200</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Mensagem de Sucesso</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n     \"status\": 200,\n     \"response\": \"Estoque Atualizado\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>0</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensagem de Erro</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "web/index.php",
+    "groupTitle": "Produto"
+  },
+  {
+    "type": "put",
     "url": "/produto/:id",
     "title": "Atualiza Produto",
     "name": "PutProduto",
