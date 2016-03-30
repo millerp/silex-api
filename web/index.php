@@ -483,7 +483,7 @@ $app->put('/produto/{id}', function ($id, Request $request) use ($app, $em) {
  *  HTTP/1.1 200 OK
  *  {
  *      "status": 200,
- *      "message": "Fabricante Removido."
+ *      "message": "Produto Removido."
  *  }
  */
 $app->delete('/produto/{id}', function ($id) use ($app, $em) {
