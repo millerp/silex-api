@@ -1,12 +1,11 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
- * Fabricante
+ * Fabricante.
  *
  * @ORM\Table(name="fabricante")
  * @ORM\Entity
@@ -14,7 +13,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 class Fabricante
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -59,8 +58,8 @@ class Fabricante
     public function toArray()
     {
         return [
-            'id' => $this->getId(),
-            'nome' => $this->getNome()
+            'id'   => $this->getId(),
+            'nome' => $this->getNome(),
         ];
     }
 
