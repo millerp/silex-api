@@ -1,12 +1,11 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
- * Filial
+ * Filial.
  *
  * @ORM\Table(name="filial")
  * @ORM\Entity
@@ -14,7 +13,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 class Filial
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -47,19 +46,21 @@ class Filial
 
     /**
      * @param string $nome
+     *
      * @return Filial
      */
     public function setNome($nome)
     {
         $this->nome = $nome;
+
         return $this;
     }
 
     public function toArray()
     {
         return [
-            'id' => $this->getId(),
-            'nome' => $this->getNome()
+            'id'   => $this->getId(),
+            'nome' => $this->getNome(),
         ];
     }
 
@@ -70,5 +71,4 @@ class Filial
     {
         $metadata->addPropertyConstraint('nome', new NotBlank(['message' => 'Campo {nome} é obrigatório']));
     }
-
 }

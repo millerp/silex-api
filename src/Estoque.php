@@ -3,7 +3,7 @@
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Estoque
+ * Estoque.
  *
  * @ORM\Table(name="estoque", indexes={@ORM\Index(name="filial_id", columns={"filial_id"}), @ORM\Index(name="produto_id", columns={"produto_id"})})
  * @ORM\Entity
@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Estoque
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -20,7 +20,7 @@ class Estoque
     private $id;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="quantidade", type="integer", nullable=false)
      */
@@ -105,11 +105,10 @@ class Estoque
     public function toArray()
     {
         return [
-            'id' => $this->getId(),
+            'id'         => $this->getId(),
             'quantidade' => $this->getQuantidade(),
-            'filial' => $this->getFilial()->toArray(),
+            'filial'     => $this->getFilial()->toArray(),
             'produto_id' => $this->getProduto()->getId(),
         ];
     }
-
 }
