@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/millerp/silex-api.png?label=ready&title=Ready)](https://waffle.io/millerp/silex-api)
 # API de Consulta de produtos
 
 API que permita consultar e atualizar o estoque de produtos.
